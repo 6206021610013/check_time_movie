@@ -30,7 +30,7 @@ describe('Check Time Movie', () => {
                 cy.wrap($el).click()
             }
         })
-       // เพื่อความชัวร์เช็คอีกทีสิ ว่ามันเปลี่ยนภาษาจริงรึเปล่า 
+       // เพื่อความชัวร์เช็ค ว่ามันเปลี่ยนภาษาจริงรึเปล่า 
         cy.get('[class="top-navigation"]').contains('Login/Sign up')
         
     })
@@ -73,6 +73,3 @@ describe('Check Time Movie', () => {
         cy.contains('Selected Seat')
     })
 })
-
-
-
