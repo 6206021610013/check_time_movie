@@ -3,7 +3,7 @@ const url = 'https://www.sfcinemacity.com'
 const todayDate = dayjs().format('DD MMM YYYY')
 const nowTime = dayjs().format('HH:mm')
 const expectTime = dayjs().add(3, 'hours').format('HH:mm')
-const nameMovie = 'Faces of Anne'
+const nameMovie = 'Black Adam'
 const locationMovie = 'SF CINEMA Robinson Lifestyle Prachinburi'
 
 describe('Check Time Movie', () => {
