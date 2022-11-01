@@ -1,5 +1,5 @@
 import dayjs from "dayjs"
-const url = 'https://www.sfcinemacity.com'
+const url = 'https://www.sfcinemacity.com/'
 const todayDate = dayjs().format('DD MMM YYYY')
 const nowTime = dayjs().format('HH:mm')
 const expectTime = dayjs().add(3, 'hours').format('HH:mm')
@@ -10,18 +10,11 @@ describe('Check Time Movie', () => {
     it('Go to url', () => {
        cy.visit(url)
     })
-
+    
     it('Enter site', () => {
-        if(cy.get('[class="cover-page"]')) {
-            cy.get('[class="cover-page"]')
-                .contains('เข้าสู่เว็บไซต์')
-                .click('bottom')
-        }
-        else {
-            cy.get('[class="ajs-dialog"]')
-                .contains('ACKNOWLEDGE')
-                .click('bottom', { force: true })
-        }
+        cy.get('[class="ajs-dialog"]')
+            .contains('รับทราบ')
+            .click('bottom', { force: true })
     })
 
     it('Change language', () => {
@@ -32,7 +25,7 @@ describe('Check Time Movie', () => {
         })
        // เพื่อความชัวร์เช็ค ว่ามันเปลี่ยนภาษาจริงรึเปล่า 
         cy.get('[class="top-navigation"]').contains('Login/Sign up')
-        
+
     })
 
     it('Select Cinema', () => {
@@ -42,7 +35,7 @@ describe('Check Time Movie', () => {
         cy.contains(locationMovie)
           .click()
     })
-    
+
     it('Select Movie', () => {
         cy.get('[class="button dropdown-button"]')
         .contains('All Movie')
